@@ -21,14 +21,32 @@ const GLASSES: GlassDef[] = [
 
 const CATEGORIES = {
   en: [
-    "Animals", "Countries", "Fruits", "Colors", "Movies", 
-    "Sports", "Brands", "Professions", "Vehicles", "Musical Instruments",
-    "Food", "Cities", "Languages", "Superheroes", "Cartoon Characters"
+    "Animals", "Countries", "Fruits", "Colors", "Movies", "Sports", "Brands", "Professions", "Vehicles", "Musical Instruments",
+    "Food", "Cities", "Languages", "Superheroes", "Cartoon Characters", "Video Games", "Hobbies", "School Subjects", "Emotions", "Furniture",
+    "Clothing", "Body Parts", "Drinks", "Desserts", "Insects", "Ocean Animals", "Birds", "Historical Figures", "Mythical Creatures", "Board Games",
+    "Programming Languages", "Vegetables", "Spices", "Flowers", "Trees", "Weather", "Planets", "Mobile Apps", "Websites", "Fast Food Chains",
+    "Restaurants", "Hotels", "Car Parts", "Bicycle Parts", "Tools", "Home Appliances", "Kitchen Utensils", "Electronics", "Office Supplies", "Art Supplies",
+    "Stationery", "Bags", "Shoes", "Headwear", "Jewelry", "Medical Specialties", "Diseases", "Medicines", "Vitamins", "Minerals",
+    "Metals", "Precious Stones", "Chemical Elements", "Sciences", "Math Concepts", "Shapes", "Patterns", "Textures", "Sounds", "Smells",
+    "Tastes", "Senses", "Mythological Gods", "Cryptids", "Dinosaurs", "Dog Breeds", "Cat Breeds", "Horse Breeds", "Fish", "Snakes",
+    "Meats", "Cheeses", "Breads", "Pasta", "Soups", "Sauces", "Salads", "Condiments", "Ice Cream Flavors", "Cakes",
+    "Pies", "Cookies", "Candies", "Chocolates", "Wines", "Beers", "Cocktails", "Coffee", "Teas", "Juices",
+    "Sodas", "Water Brands", "Sports Drinks", "Energy Drinks", "Exercises", "Yoga Poses", "Dance Styles", "Martial Arts", "Olympic Sports", "Winter Sports",
+    "Water Sports", "Extreme Sports", "Team Sports", "Individual Sports", "Track Events", "Gymnastics", "Swimming Strokes", "Boats", "Aircraft", "Trains"
   ],
   th: [
-    "สัตว์", "ประเทศ", "ผลไม้", "สี", "ภาพยนตร์",
-    "กีฬา", "แบรนด์", "อาชีพ", "ยานพาหนะ", "เครื่องดนตรี",
-    "อาหาร", "เมือง", "ภาษา", "ซูเปอร์ฮีโร่", "ตัวการ์ตูน"
+    "สัตว์", "ประเทศ", "ผลไม้", "สี", "ภาพยนตร์", "กีฬา", "แบรนด์", "อาชีพ", "ยานพาหนะ", "เครื่องดนตรี",
+    "อาหาร", "เมือง", "ภาษา", "ซูเปอร์ฮีโร่", "ตัวการ์ตูน", "วิดีโอเกม", "งานอดิเรก", "วิชาเรียน", "อารมณ์", "เฟอร์นิเจอร์",
+    "เสื้อผ้า", "อวัยวะ", "เครื่องดื่ม", "ของหวาน", "แมลง", "สัตว์ทะเล", "นก", "บุคคลในประวัติศาสตร์", "สัตว์ในตำนาน", "บอร์ดเกม",
+    "ภาษาโปรแกรม", "ผัก", "เครื่องเทศ", "ดอกไม้", "ต้นไม้", "สภาพอากาศ", "ดาวเคราะห์", "แอปมือถือ", "เว็บไซต์", "ร้านฟาสต์ฟู้ด",
+    "ร้านอาหาร", "โรงแรม", "อะไหล่รถยนต์", "อะไหล่จักรยาน", "เครื่องมือช่าง", "เครื่องใช้ไฟฟ้า", "เครื่องครัว", "อุปกรณ์อิเล็กทรอนิกส์", "อุปกรณ์สำนักงาน", "อุปกรณ์ศิลปะ",
+    "เครื่องเขียน", "กระเป๋า", "รองเท้า", "หมวก", "เครื่องประดับ", "สาขาการแพทย์", "โรคภัยไข้เจ็บ", "ยา", "วิตามิน", "แร่ธาตุ",
+    "โลหะ", "อัญมณี", "ธาตุเคมี", "วิทยาศาสตร์", "แนวคิดทางคณิตศาสตร์", "รูปทรง", "ลวดลาย", "พื้นผิว", "เสียง", "กลิ่น",
+    "รสชาติ", "ประสาทสัมผัส", "เทพเจ้าในตำนาน", "สัตว์ประหลาด", "ไดโนเสาร์", "สายพันธุ์สุนัข", "สายพันธุ์แมว", "สายพันธุ์ม้า", "ปลา", "งู",
+    "เนื้อสัตว์", "ชีส", "ขนมปัง", "พาสต้า", "ซุป", "ซอส", "สลัด", "เครื่องปรุง", "รสไอศกรีม", "เค้ก",
+    "พาย", "คุกกี้", "ลูกอม", "ช็อกโกแลต", "ไวน์", "เบียร์", "ค็อกเทล", "กาแฟ", "ชา", "น้ำผลไม้",
+    "น้ำอัดลม", "ยี่ห้อน้ำดื่ม", "เครื่องดื่มเกลือแร่", "เครื่องดื่มชูกำลัง", "การออกกำลังกาย", "ท่าโยคะ", "สไตล์การเต้น", "ศิลปะการต่อสู้", "กีฬาโอลิมปิก", "ฤดูหนาวกีฬา",
+    "กีฬาทางน้ำ", "กีฬาเอ็กซ์ตรีม", "กีฬาประเภททีม", "กีฬาประเภทเดี่ยว", "กรีฑา", "ท่าว่ายน้ำ", "เรือ", "เครื่องบิน", "รถไฟ"
   ]
 };
 
@@ -36,12 +54,30 @@ const SYNC_WORDS = {
   en: [
     "Sun", "Water", "Fire", "Snow", "Rain", "Ice", "Star", "Moon", "Sea", "Tree",
     "Wood", "Gold", "Black", "White", "Red", "Blue", "Green", "Hot", "Cold", "Sweet",
-    "Big", "Small", "Fast", "Slow", "Hard", "Soft", "High", "Time", "Life", "Day"
+    "Big", "Small", "Fast", "Slow", "Hard", "Soft", "High", "Time", "Life", "Day",
+    "Night", "Love", "Hate", "Light", "Dark", "Boy", "Girl", "Man", "Woman", "King",
+    "Queen", "Dog", "Cat", "Bird", "Fish", "Car", "Bus", "Train", "Plane", "Ship",
+    "Book", "Pen", "Paper", "Desk", "Chair", "Phone", "Computer", "Music", "Art", "Science",
+    "Happy", "Sad", "Angry", "Fear", "Smile", "Cry", "Laugh", "Sleep", "Wake", "Dream",
+    "Eat", "Drink", "Walk", "Run", "Jump", "Fly", "Swim", "Read", "Write", "Speak",
+    "Listen", "See", "Hear", "Touch", "Taste", "Smell", "Think", "Know", "Learn", "Teach",
+    "Buy", "Sell", "Give", "Take", "Open", "Close", "Start", "Stop", "Play", "Work",
+    "Money", "Bank", "Store", "Shop", "House", "Room", "Door", "Window", "Wall", "Floor",
+    "Roof", "Street", "Road", "City", "Town", "Village", "Country", "World", "Earth", "Space"
   ],
   th: [
     "ข้าว", "น้ำ", "รถ", "ไฟ", "ยาง", "ทอง", "ดิน", "ลม", "ฟ้า", "หมู",
     "ไก่", "ปลา", "นก", "เสือ", "หมี", "แมว", "หมา", "บ้าน", "วัด", "โรง",
-    "ยา", "ชา", "กา", "นม", "พัด", "รอง", "แว่น", "นา", "แม่", "พ่อ"
+    "ยา", "ชา", "กา", "นม", "พัด", "รอง", "แว่น", "นา", "แม่", "พ่อ",
+    "พี่", "น้อง", "ปู่", "ย่า", "ตา", "ยาย", "ลุง", "ป้า", "น้า", "อา",
+    "ผี", "หมอ", "ครู", "นัก", "ตำ", "ทะ", "ดิน", "ปาก", "สระ", "กระ",
+    "โต๊ะ", "เก้า", "เตียง", "หมอน", "ผ้า", "พัด", "แอร์", "ที", "ตู้", "เย็น",
+    "ดี", "เสีย", "โกรธ", "กลัว", "ยิ้ม", "ร้อง", "หัว", "นอน", "ตื่น", "ฝัน",
+    "กิน", "ดื่ม", "เดิน", "วิ่ง", "กระ", "บิน", "ว่าย", "อ่าน", "เขียน", "พูด",
+    "ฟัง", "ดู", "ได้", "สัม", "ชิม", "ดม", "คิด", "รู้", "เรียน", "สอน",
+    "ซื้อ", "ขาย", "ให้", "รับ", "เปิด", "ปิด", "เริ่ม", "หยุด", "เล่น", "ทำ",
+    "เงิน", "ให้", "ร้าน", "ตลาด", "ห้อง", "ประ", "หน้า", "ผนัง", "พื้น", "หลัง",
+    "จะ", "ซอย", "เมือง", "หมู่", "ตะ", "อำ", "จัง", "ประ", "โลก", "ผล"
   ]
 };
 
@@ -76,10 +112,10 @@ export default function App() {
   const tiltRef = useRef(0);
   const hasPouredThisTurnRef = useRef(false);
   const overflowThresholdRef = useRef(103);
-  
+
   const gameStateRef = useRef(gameState);
   useEffect(() => { gameStateRef.current = gameState; }, [gameState]);
-  
+
   const currentPlayerRef = useRef(currentPlayer);
   useEffect(() => { currentPlayerRef.current = currentPlayer; }, [currentPlayer]);
 
@@ -186,15 +222,15 @@ export default function App() {
 
     if (lastTimeRef.current != undefined) {
       const deltaTime = time - lastTimeRef.current;
-      
+
       const tiltSpeed = 0.003; // ~333ms to full tilt (allows for short taps)
       const untiltSpeed = 0.006; // ~166ms to stop
-      
+
       if (isPouringRef.current) {
         tiltRef.current = Math.min(1, tiltRef.current + deltaTime * tiltSpeed);
       } else {
         tiltRef.current = Math.max(0, tiltRef.current - deltaTime * untiltSpeed);
-        
+
         if (tiltRef.current === 0 && hasPouredThisTurnRef.current) {
           setCurrentPlayer(p => p === 1 ? 2 : 1);
           hasPouredThisTurnRef.current = false;
@@ -210,7 +246,7 @@ export default function App() {
         const currentPourRate = actualPourRate * Math.pow(tiltRef.current, 2.5) * jitter;
 
         waterLevelRef.current += (currentPourRate * deltaTime) / 1000;
-        
+
         if (waterLevelRef.current > overflowThresholdRef.current) {
           waterLevelRef.current = overflowThresholdRef.current + 2;
           setWaterLevel(overflowThresholdRef.current + 2);
@@ -220,7 +256,7 @@ export default function App() {
         setWaterLevel(waterLevelRef.current);
       }
     }
-    
+
     lastTimeRef.current = time;
     requestRef.current = requestAnimationFrame(loop);
   };
@@ -251,8 +287,8 @@ export default function App() {
   };
 
   // Tension effect when water is high
-  const tensionShake = waterLevel > 95 && gameState === 'playing' 
-    ? `translate(${Math.random() * 2 - 1}px, ${Math.random() * 2 - 1}px)` 
+  const tensionShake = waterLevel > 95 && gameState === 'playing'
+    ? `translate(${Math.random() * 2 - 1}px, ${Math.random() * 2 - 1}px)`
     : 'none';
 
   const meniscus = Math.max(0, waterLevel - 98);
@@ -263,10 +299,10 @@ export default function App() {
   return (
     <div className="fixed inset-0 bg-[#1a0b05] font-sans selection:bg-[#ffb38a]/30">
       <div className="w-full h-full bg-gradient-to-br from-[#b84a22] via-[#8c3314] to-[#4a1705] overflow-hidden flex flex-col relative">
-        
+
         {/* Top Nav */}
         <header className="flex justify-between items-center p-4 md:p-8 z-20">
-          <div 
+          <div
             className="flex items-center gap-2 font-bold text-xl md:text-2xl text-white cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => setGameMode('home')}
           >
@@ -275,17 +311,17 @@ export default function App() {
             </div>
             Party Games
           </div>
-          
+
           {gameMode !== 'home' && (
             <nav className="hidden lg:flex gap-10 text-sm text-white/80">
-              <button 
+              <button
                 onClick={() => setGameMode('spill')}
                 className={`flex items-center gap-2 transition-colors font-medium ${gameMode === 'spill' ? 'text-white' : 'hover:text-white opacity-50'}`}
               >
                 <span className={`w-1.5 h-1.5 rounded-full ${gameMode === 'spill' ? 'bg-[#ffb38a]' : 'bg-white/30'}`} />
                 Spill & Lose
               </button>
-              <button 
+              <button
                 onClick={() => {
                   setGameMode('category');
                   setIsCategoryPlaying(false);
@@ -296,7 +332,7 @@ export default function App() {
                 <span className={`w-1.5 h-1.5 rounded-full ${gameMode === 'category' ? 'bg-[#ffb38a]' : 'bg-white/30'}`} />
                 Category Guessing
               </button>
-              <button 
+              <button
                 onClick={() => {
                   setGameMode('truth');
                   setIsSyncPlaying(false);
@@ -313,48 +349,48 @@ export default function App() {
           {gameMode !== 'home' && (
             <div className="lg:hidden absolute top-20 left-4 right-4 z-30 flex justify-center">
               <div className="relative w-full max-w-[240px]">
-                <button 
+                <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   className="w-full px-5 py-2.5 rounded-full bg-[#ffb38a] text-black text-sm font-bold flex items-center justify-between shadow-lg"
                 >
                   <span>
-                    {gameMode === 'spill' ? 'Spill & Lose' : 
-                     gameMode === 'category' ? 'Category Guessing' : 
-                     (lang === 'th' ? 'พูดตรงรอดกิน' : 'Sync or Drink')}
+                    {gameMode === 'spill' ? 'Spill & Lose' :
+                      gameMode === 'category' ? 'Category Guessing' :
+                        (lang === 'th' ? 'พูดตรงรอดกิน' : 'Sync or Drink')}
                   </span>
                   <span className={`text-xs transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>▼</span>
                 </button>
-                
+
                 <AnimatePresence>
                   {isMobileMenuOpen && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute top-full mt-2 left-0 right-0 bg-[#4a1705]/95 backdrop-blur-md border border-[#ffb38a]/30 rounded-xl overflow-hidden flex flex-col shadow-2xl"
                     >
-                      <button 
+                      <button
                         onClick={() => { setGameMode('spill'); setIsMobileMenuOpen(false); }}
                         className={`px-5 py-3.5 text-sm text-left transition-colors ${gameMode === 'spill' ? 'text-[#ffb38a] font-bold bg-white/5' : 'text-white hover:bg-white/5'}`}
                       >
                         Spill & Lose
                       </button>
-                      <button 
-                        onClick={() => { 
-                          setGameMode('category'); 
+                      <button
+                        onClick={() => {
+                          setGameMode('category');
                           setIsCategoryPlaying(false);
                           setIsCategoryGameOver(false);
-                          setIsMobileMenuOpen(false); 
+                          setIsMobileMenuOpen(false);
                         }}
                         className={`px-5 py-3.5 text-sm text-left border-t border-white/10 transition-colors ${gameMode === 'category' ? 'text-[#ffb38a] font-bold bg-white/5' : 'text-white hover:bg-white/5'}`}
                       >
                         Category Guessing
                       </button>
-                      <button 
-                        onClick={() => { 
-                          setGameMode('truth'); 
+                      <button
+                        onClick={() => {
+                          setGameMode('truth');
                           setIsSyncPlaying(false);
-                          setIsMobileMenuOpen(false); 
+                          setIsMobileMenuOpen(false);
                         }}
                         className={`px-5 py-3.5 text-sm text-left border-t border-white/10 transition-colors ${gameMode === 'truth' ? 'text-[#ffb38a] font-bold bg-white/5' : 'text-white hover:bg-white/5'}`}
                       >
@@ -367,8 +403,8 @@ export default function App() {
             </div>
           )}
 
-          <button 
-            onClick={() => setLang(lang === 'th' ? 'en' : 'th')} 
+          <button
+            onClick={() => setLang(lang === 'th' ? 'en' : 'th')}
             className="flex items-center gap-2 border border-white/40 px-3 py-1.5 md:px-4 md:py-2 rounded-sm text-sm text-white hover:bg-white/10 transition-colors uppercase font-medium tracking-wider"
           >
             <Globe size={16} />
@@ -383,11 +419,11 @@ export default function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight">
                 {lang === 'th' ? 'เลือกเกมที่จะเล่น' : 'Choose a Game'}
               </h2>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 {/* Featured Game: Spill & Lose */}
-                <div 
-                  onClick={() => setGameMode('spill')} 
+                <div
+                  onClick={() => setGameMode('spill')}
                   className="lg:col-span-8 bg-gradient-to-br from-[#b84a22] to-[#4a1705] rounded-[2rem] p-8 md:p-12 cursor-pointer hover:scale-[1.01] transition-transform border border-white/10 shadow-2xl relative overflow-hidden group min-h-[300px] flex flex-col justify-end"
                 >
                   <div className="absolute -top-10 -right-10 p-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:rotate-12">
@@ -410,15 +446,15 @@ export default function App() {
 
                 <div className="lg:col-span-4 flex flex-col gap-6">
                   {/* Category Guessing */}
-                  <div 
-                    onClick={() => { setGameMode('category'); setIsCategoryPlaying(false); setIsCategoryGameOver(false); }} 
+                  <div
+                    onClick={() => { setGameMode('category'); setIsCategoryPlaying(false); setIsCategoryGameOver(false); }}
                     className="flex-1 bg-gradient-to-br from-indigo-600 to-blue-900 rounded-[2rem] p-8 cursor-pointer hover:scale-[1.02] transition-transform border border-white/10 shadow-xl relative overflow-hidden group flex flex-col justify-end"
                   >
                     <div className="absolute -top-4 -right-4 p-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:rotate-12">
                       <Brain size={120} />
                     </div>
                     <div className="relative z-10">
-                      <h3 className="text-3xl font-bold text-white mb-2 leading-tight">Category<br/>Guessing</h3>
+                      <h3 className="text-3xl font-bold text-white mb-2 leading-tight">Category<br />Guessing</h3>
                       <p className="text-white/70 mb-6 text-sm">
                         {lang === 'th' ? 'แข่งกันนึกคำศัพท์ในหมวดหมู่ที่กำหนดภายใน 5 วินาที' : 'Race to name words in a given category within 5 seconds.'}
                       </p>
@@ -429,15 +465,15 @@ export default function App() {
                   </div>
 
                   {/* Sync or Drink */}
-                  <div 
-                    onClick={() => { setGameMode('truth'); setIsSyncPlaying(false); }} 
+                  <div
+                    onClick={() => { setGameMode('truth'); setIsSyncPlaying(false); }}
                     className="flex-1 bg-gradient-to-br from-emerald-600 to-teal-900 rounded-[2rem] p-8 cursor-pointer hover:scale-[1.02] transition-transform border border-white/10 shadow-xl relative overflow-hidden group flex flex-col justify-end"
                   >
                     <div className="absolute -top-4 -right-4 p-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:rotate-12">
                       <MessageCircle size={120} />
                     </div>
                     <div className="relative z-10">
-                      <h3 className="text-3xl font-bold text-white mb-2 leading-tight">{lang === 'th' ? 'พูดตรง' : 'Sync or'}<br/>{lang === 'th' ? 'รอดกิน' : 'Drink'}</h3>
+                      <h3 className="text-3xl font-bold text-white mb-2 leading-tight">{lang === 'th' ? 'พูดตรง' : 'Sync or'}<br />{lang === 'th' ? 'รอดกิน' : 'Drink'}</h3>
                       <p className="text-white/70 mb-6 text-sm">
                         {lang === 'th' ? 'ใจตรงกันรอด ใจไม่ตรงกันดื่ม! ทดสอบความรู้ใจ' : 'Think alike and survive, or drink! Test your synergy.'}
                       </p>
@@ -452,272 +488,272 @@ export default function App() {
           </main>
         ) : gameMode === 'spill' ? (
           <main className="flex-1 flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] px-4 md:px-8 pb-4 md:pb-8 z-20 gap-2 lg:gap-8 overflow-hidden relative">
-            
+
             {/* Left Column */}
-          <div className="relative lg:relative top-0 left-0 right-0 lg:inset-auto flex flex-col justify-start lg:justify-between pt-2 md:pt-8 pb-0 md:pb-4 shrink-0 pointer-events-none lg:pointer-events-auto z-0">
-            <p className="max-w-xs text-white/80 text-sm md:text-lg leading-relaxed font-light hidden md:block">
-              {lang === 'th' ? 'จากหยดน้ำเล็กๆ สู่การหกครั้งใหญ่ บททดสอบความนิ่งของมือและมิตรภาพของคุณ' : 'From a single drop to a massive spill, a comprehensive approach to testing your nerves and friendships.'}
-            </p>
-            
-            <div className="my-auto lg:my-auto mt-4 lg:mt-0">
-              <h1 className="text-5xl md:text-6xl xl:text-[5.5rem] font-medium leading-[1.05] tracking-tight">
-                <span className="text-[#ffb38a]">Don't let it</span><br />
-                <span className="text-white">overflow</span>
-              </h1>
-            </div>
-          </div>
+            <div className="relative lg:relative top-0 left-0 right-0 lg:inset-auto flex flex-col justify-start lg:justify-between pt-2 md:pt-8 pb-0 md:pb-4 shrink-0 pointer-events-none lg:pointer-events-auto z-0">
+              <p className="max-w-xs text-white/80 text-sm md:text-lg leading-relaxed font-light hidden md:block">
+                {lang === 'th' ? 'จากหยดน้ำเล็กๆ สู่การหกครั้งใหญ่ บททดสอบความนิ่งของมือและมิตรภาพของคุณ' : 'From a single drop to a massive spill, a comprehensive approach to testing your nerves and friendships.'}
+              </p>
 
-          {/* Center Column (The Glass) */}
-          <div 
-            className="relative flex items-center justify-center w-full lg:w-[400px] xl:w-[500px] flex-1 lg:h-auto shrink-0 touch-none select-none cursor-pointer lg:cursor-default z-10 mt-4 lg:mt-0"
-            onMouseDown={startPouring}
-            onMouseUp={stopPouring}
-            onMouseLeave={stopPouring}
-            onTouchStart={startPouring}
-            onTouchEnd={stopPouring}
-          >
-            {gameState === 'playing' && !hasTapped && (
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-white/60 text-sm animate-pulse lg:hidden pointer-events-none z-50 whitespace-nowrap">
-                {lang === 'th' ? 'แตะค้างที่แก้วเพื่อริน' : 'Tap and hold glass to pour'}
+              <div className="my-auto lg:my-auto mt-4 lg:mt-0">
+                <h1 className="text-5xl md:text-6xl xl:text-[5.5rem] font-medium leading-[1.05] tracking-tight">
+                  <span className="text-[#ffb38a]">Don't let it</span><br />
+                  <span className="text-white">overflow</span>
+                </h1>
               </div>
-            )}
-            
-            {/* Glass Container (for spills) */}
-            <div className="relative flex items-end justify-center h-[200px] md:h-[350px] lg:h-[450px] z-10 w-full pointer-events-none">
-              {/* Shake Container */}
-              <div style={{ transform: tensionShake }} className="relative flex items-end justify-center h-full w-full scale-[0.6] md:scale-100 origin-bottom">
-                {/* The Glass */}
-                <div 
-                  className={`relative border-x-4 border-b-4 border-white/30 bg-gradient-to-b from-white/5 to-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md transition-[width,height,border-radius] duration-500 ${selectedGlass.className}`}
-                >
-                {/* Glass Rim Highlight */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-30" />
+            </div>
 
-                {/* Beer Stream */}
-                {streamIntensity > 0 && (
-                  <div 
-                    className="absolute top-0 left-1/2 -translate-x-1/2 bg-amber-200/70 rounded-b-full z-20 blur-[1px]" 
-                    style={{ 
-                      height: `${100 - Math.min(waterLevel, 100)}%`,
-                      width: `${Math.max(4, streamIntensity * 24)}px`,
-                      opacity: streamIntensity
-                    }} 
+            {/* Center Column (The Glass) */}
+            <div
+              className="relative flex items-center justify-center w-full lg:w-[400px] xl:w-[500px] flex-1 lg:h-auto shrink-0 touch-none select-none cursor-pointer lg:cursor-default z-10 mt-4 lg:mt-0"
+              onMouseDown={startPouring}
+              onMouseUp={stopPouring}
+              onMouseLeave={stopPouring}
+              onTouchStart={startPouring}
+              onTouchEnd={stopPouring}
+            >
+              {gameState === 'playing' && !hasTapped && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 text-white/60 text-sm animate-pulse lg:hidden pointer-events-none z-50 whitespace-nowrap">
+                  {lang === 'th' ? 'แตะค้างที่แก้วเพื่อริน' : 'Tap and hold glass to pour'}
+                </div>
+              )}
+
+              {/* Glass Container (for spills) */}
+              <div className="relative flex items-end justify-center h-[200px] md:h-[350px] lg:h-[450px] z-10 w-full pointer-events-none">
+                {/* Shake Container */}
+                <div style={{ transform: tensionShake }} className="relative flex items-end justify-center h-full w-full scale-[0.6] md:scale-100 origin-bottom">
+                  {/* The Glass */}
+                  <div
+                    className={`relative border-x-4 border-b-4 border-white/30 bg-gradient-to-b from-white/5 to-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md transition-[width,height,border-radius] duration-500 ${selectedGlass.className}`}
                   >
-                    {/* Inner stream core */}
-                    <div className="absolute inset-x-[20%] top-0 bottom-0 bg-white/50 rounded-b-full" />
-                  </div>
-                )}
-                
-                {/* Beer Body */}
-                {waterLevel > 0 && (
-                  <div 
-                    className={`absolute bottom-0 left-0 right-0 bg-amber-500/60 backdrop-blur-md z-10 ${selectedGlass.waterClassName}`}
-                    style={{ height: `${Math.min(waterLevel, 100)}%` }}
-                  >
-                    {/* Surface / Foam */}
-                    <div 
-                      className="absolute top-0 left-0 right-0 z-20"
-                      style={{
-                        height: `${surfaceHeight}px`,
-                        transform: `translateY(-50%) scaleX(${1 + visualMeniscus * 0.01})`,
-                      }}
-                    >
-                      <div className={`w-full h-full relative ${streamIntensity > 0 ? 'animate-slosh' : ''}`}>
-                        {/* Beer Surface (under foam) */}
-                        <div 
-                          className="absolute inset-0 bg-amber-500/80 border-[0.5px] border-amber-300/50 translate-y-[20%]"
-                          style={{ borderRadius: visualMeniscus > 2 ? '50% 50% 48% 48%' : '50%' }}
-                        />
-                        
-                        {/* Foam Surface */}
-                        <div 
-                          className="absolute inset-0 bg-yellow-50 shadow-[0_0_15px_rgba(255,255,255,0.8)] border border-white/80 scale-105 -translate-y-[5%]"
-                          style={{ borderRadius: visualMeniscus > 2 ? '50% 50% 48% 48%' : '50%' }}
-                        >
-                          {/* Foam texture on surface */}
-                          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,white_2px,transparent_2px)] bg-[size:6px_6px] rounded-[inherit]" />
+                    {/* Glass Rim Highlight */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-30" />
 
-                          {/* Meniscus Bulge Highlight */}
-                          {visualMeniscus > 0 && (
-                            <div 
-                              className="absolute top-[5%] left-[30%] right-[30%] bg-white/90 rounded-full blur-[2px]"
-                              style={{ height: `${visualMeniscus * 2}px`, opacity: visualMeniscus / 4 }}
-                            />
-                          )}
-
-                          {/* Surface ripples when pouring */}
-                          {streamIntensity > 0 && (
-                            <div className="absolute inset-0 rounded-[50%] border-2 border-white/60 animate-ping" style={{ animationDuration: '0.8s' }} />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Liquid Body (to hide bubbles overflowing the surface) */}
-                    <div className={`absolute inset-0 overflow-hidden ${selectedGlass.waterClassName}`}>
-                      {/* Depth gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-orange-900/90 via-amber-600/70 to-yellow-300/30 mix-blend-multiply" />
-                      
-                      {/* Foam Layer inside the liquid body */}
-                      <div 
-                        className="absolute top-0 left-0 right-0 bg-gradient-to-b from-yellow-50 to-yellow-100/40 z-20"
-                        style={{ height: `${Math.min(waterLevel * 0.5, 30)}px` }}
+                    {/* Beer Stream */}
+                    {streamIntensity > 0 && (
+                      <div
+                        className="absolute top-0 left-1/2 -translate-x-1/2 bg-amber-200/70 rounded-b-full z-20 blur-[1px]"
+                        style={{
+                          height: `${100 - Math.min(waterLevel, 100)}%`,
+                          width: `${Math.max(4, streamIntensity * 24)}px`,
+                          opacity: streamIntensity
+                        }}
                       >
-                        {/* Foam texture */}
-                        <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_center,white_1.5px,transparent_1.5px)] bg-[size:5px_5px]" />
-                        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,white_2.5px,transparent_2.5px)] bg-[size:8px_8px] bg-[position:3px_3px]" />
+                        {/* Inner stream core */}
+                        <div className="absolute inset-x-[20%] top-0 bottom-0 bg-white/50 rounded-b-full" />
                       </div>
-                      
-                      {/* Caustics / Light reflection */}
-                      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/30 via-white/5 to-transparent mix-blend-overlay" />
-                      <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-amber-200/20 to-transparent mix-blend-overlay" />
-                      
-                      {/* Bubbles */}
-                      {waterLevel > 0 && (
-                        <div className={`absolute inset-0 transition-opacity duration-500 ${streamIntensity > 0 ? 'opacity-80' : 'opacity-30'}`}>
-                          {[...Array(12)].map((_, i) => (
-                            <div 
-                              key={i}
-                              className="absolute bottom-0 w-1.5 h-1.5 bg-white/80 rounded-full blur-[0.5px]"
-                              style={{
-                                left: `${10 + Math.random() * 80}%`,
-                                animation: `rise ${0.8 + Math.random() * 1.5}s infinite linear`,
-                                animationDelay: `${Math.random() * 2}s`
-                              }}
+                    )}
+
+                    {/* Beer Body */}
+                    {waterLevel > 0 && (
+                      <div
+                        className={`absolute bottom-0 left-0 right-0 bg-amber-500/60 backdrop-blur-md z-10 ${selectedGlass.waterClassName}`}
+                        style={{ height: `${Math.min(waterLevel, 100)}%` }}
+                      >
+                        {/* Surface / Foam */}
+                        <div
+                          className="absolute top-0 left-0 right-0 z-20"
+                          style={{
+                            height: `${surfaceHeight}px`,
+                            transform: `translateY(-50%) scaleX(${1 + visualMeniscus * 0.01})`,
+                          }}
+                        >
+                          <div className={`w-full h-full relative ${streamIntensity > 0 ? 'animate-slosh' : ''}`}>
+                            {/* Beer Surface (under foam) */}
+                            <div
+                              className="absolute inset-0 bg-amber-500/80 border-[0.5px] border-amber-300/50 translate-y-[20%]"
+                              style={{ borderRadius: visualMeniscus > 2 ? '50% 50% 48% 48%' : '50%' }}
                             />
-                          ))}
+
+                            {/* Foam Surface */}
+                            <div
+                              className="absolute inset-0 bg-yellow-50 shadow-[0_0_15px_rgba(255,255,255,0.8)] border border-white/80 scale-105 -translate-y-[5%]"
+                              style={{ borderRadius: visualMeniscus > 2 ? '50% 50% 48% 48%' : '50%' }}
+                            >
+                              {/* Foam texture on surface */}
+                              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,white_2px,transparent_2px)] bg-[size:6px_6px] rounded-[inherit]" />
+
+                              {/* Meniscus Bulge Highlight */}
+                              {visualMeniscus > 0 && (
+                                <div
+                                  className="absolute top-[5%] left-[30%] right-[30%] bg-white/90 rounded-full blur-[2px]"
+                                  style={{ height: `${visualMeniscus * 2}px`, opacity: visualMeniscus / 4 }}
+                                />
+                              )}
+
+                              {/* Surface ripples when pouring */}
+                              {streamIntensity > 0 && (
+                                <div className="absolute inset-0 rounded-[50%] border-2 border-white/60 animate-ping" style={{ animationDuration: '0.8s' }} />
+                              )}
+                            </div>
+                          </div>
                         </div>
-                      )}
-                    </div>
+
+                        {/* Liquid Body (to hide bubbles overflowing the surface) */}
+                        <div className={`absolute inset-0 overflow-hidden ${selectedGlass.waterClassName}`}>
+                          {/* Depth gradient */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-orange-900/90 via-amber-600/70 to-yellow-300/30 mix-blend-multiply" />
+
+                          {/* Foam Layer inside the liquid body */}
+                          <div
+                            className="absolute top-0 left-0 right-0 bg-gradient-to-b from-yellow-50 to-yellow-100/40 z-20"
+                            style={{ height: `${Math.min(waterLevel * 0.5, 30)}px` }}
+                          >
+                            {/* Foam texture */}
+                            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_center,white_1.5px,transparent_1.5px)] bg-[size:5px_5px]" />
+                            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,white_2.5px,transparent_2.5px)] bg-[size:8px_8px] bg-[position:3px_3px]" />
+                          </div>
+
+                          {/* Caustics / Light reflection */}
+                          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white/30 via-white/5 to-transparent mix-blend-overlay" />
+                          <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-amber-200/20 to-transparent mix-blend-overlay" />
+
+                          {/* Bubbles */}
+                          {waterLevel > 0 && (
+                            <div className={`absolute inset-0 transition-opacity duration-500 ${streamIntensity > 0 ? 'opacity-80' : 'opacity-30'}`}>
+                              {[...Array(12)].map((_, i) => (
+                                <div
+                                  key={i}
+                                  className="absolute bottom-0 w-1.5 h-1.5 bg-white/80 rounded-full blur-[0.5px]"
+                                  style={{
+                                    left: `${10 + Math.random() * 80}%`,
+                                    animation: `rise ${0.8 + Math.random() * 1.5}s infinite linear`,
+                                    animationDelay: `${Math.random() * 2}s`
+                                  }}
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Glass Front Reflection */}
+                    <div className={`absolute inset-0 w-full h-full bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none z-30 ${selectedGlass.waterClassName}`} />
+                    <div className="absolute top-2 bottom-8 left-3 w-3 rounded-full bg-gradient-to-b from-white/30 to-transparent blur-[2px] pointer-events-none z-30" />
+                    <div className="absolute top-1/4 bottom-1/4 right-3 w-1.5 rounded-full bg-white/10 blur-[1px] pointer-events-none z-30" />
+
+                    {/* Overflow Spills */}
+                    {waterLevel > overflowThresholdRef.current && (
+                      <>
+                        {/* Left spill */}
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: '110%', opacity: 1 }}
+                          transition={{ duration: 0.5, ease: 'easeIn' }}
+                          className="absolute top-0 -left-3 w-2 bg-amber-400/80 rounded-b-full z-20 blur-[1px]"
+                        >
+                          <motion.div
+                            animate={{ y: [0, 100], opacity: [1, 0] }}
+                            transition={{ repeat: Infinity, duration: 0.6, ease: "linear" }}
+                            className="absolute bottom-[-10px] left-0 w-2 h-4 bg-amber-300/90 rounded-full"
+                          />
+                        </motion.div>
+
+                        {/* Right spill */}
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: '115%', opacity: 1 }}
+                          transition={{ duration: 0.6, ease: 'easeIn', delay: 0.1 }}
+                          className="absolute top-0 -right-3 w-2.5 bg-amber-400/80 rounded-b-full z-20 blur-[1px]"
+                        >
+                          <motion.div
+                            animate={{ y: [0, 150], opacity: [1, 0] }}
+                            transition={{ repeat: Infinity, duration: 0.5, ease: "linear", delay: 0.2 }}
+                            className="absolute bottom-[-15px] left-0 w-2.5 h-5 bg-amber-300/90 rounded-full"
+                          />
+                        </motion.div>
+
+                        {/* Front spill */}
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: '95%', opacity: 1 }}
+                          transition={{ duration: 0.4, ease: 'easeIn', delay: 0.2 }}
+                          className="absolute top-0 left-[20%] w-1.5 bg-amber-300/70 rounded-b-full z-30 blur-[1px]"
+                        >
+                          <motion.div
+                            animate={{ y: [0, 80], opacity: [1, 0] }}
+                            transition={{ repeat: Infinity, duration: 0.4, ease: "linear", delay: 0.1 }}
+                            className="absolute bottom-[-8px] left-0 w-1.5 h-3 bg-amber-200/90 rounded-full"
+                          />
+                        </motion.div>
+                      </>
+                    )}
                   </div>
-                )}
-                
-                {/* Glass Front Reflection */}
-                <div className={`absolute inset-0 w-full h-full bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none z-30 ${selectedGlass.waterClassName}`} />
-                <div className="absolute top-2 bottom-8 left-3 w-3 rounded-full bg-gradient-to-b from-white/30 to-transparent blur-[2px] pointer-events-none z-30" />
-                <div className="absolute top-1/4 bottom-1/4 right-3 w-1.5 rounded-full bg-white/10 blur-[1px] pointer-events-none z-30" />
+                </div>
+              </div>
 
-                {/* Overflow Spills */}
-                {waterLevel > overflowThresholdRef.current && (
-                  <>
-                    {/* Left spill */}
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: '110%', opacity: 1 }}
-                      transition={{ duration: 0.5, ease: 'easeIn' }}
-                      className="absolute top-0 -left-3 w-2 bg-amber-400/80 rounded-b-full z-20 blur-[1px]"
-                    >
-                      <motion.div 
-                        animate={{ y: [0, 100], opacity: [1, 0] }}
-                        transition={{ repeat: Infinity, duration: 0.6, ease: "linear" }}
-                        className="absolute bottom-[-10px] left-0 w-2 h-4 bg-amber-300/90 rounded-full"
-                      />
-                    </motion.div>
-                    
-                    {/* Right spill */}
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: '115%', opacity: 1 }}
-                      transition={{ duration: 0.6, ease: 'easeIn', delay: 0.1 }}
-                      className="absolute top-0 -right-3 w-2.5 bg-amber-400/80 rounded-b-full z-20 blur-[1px]"
-                    >
-                      <motion.div 
-                        animate={{ y: [0, 150], opacity: [1, 0] }}
-                        transition={{ repeat: Infinity, duration: 0.5, ease: "linear", delay: 0.2 }}
-                        className="absolute bottom-[-15px] left-0 w-2.5 h-5 bg-amber-300/90 rounded-full"
-                      />
-                    </motion.div>
-                    
-                    {/* Front spill */}
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: '95%', opacity: 1 }}
-                      transition={{ duration: 0.4, ease: 'easeIn', delay: 0.2 }}
-                      className="absolute top-0 left-[20%] w-1.5 bg-amber-300/70 rounded-b-full z-30 blur-[1px]"
-                    >
-                      <motion.div 
-                        animate={{ y: [0, 80], opacity: [1, 0] }}
-                        transition={{ repeat: Infinity, duration: 0.4, ease: "linear", delay: 0.1 }}
-                        className="absolute bottom-[-8px] left-0 w-1.5 h-3 bg-amber-200/90 rounded-full"
-                      />
-                    </motion.div>
-                  </>
-                )}
-              </div>
-              </div>
+              {/* Overflow puddle */}
+              {waterLevel > overflowThresholdRef.current && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, y: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="absolute bottom-[-25px] left-1/2 -translate-x-1/2 w-64 md:w-96 h-12 md:h-16 bg-amber-500/50 blur-xl rounded-[100%] z-0 pointer-events-none"
+                >
+                  {/* Splash ripples */}
+                  <motion.div
+                    animate={{ scale: [1, 1.2], opacity: [0.6, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
+                    className="absolute inset-0 border-4 border-amber-300/40 rounded-[100%]"
+                  />
+                  <motion.div
+                    animate={{ scale: [1, 1.4], opacity: [0.4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                    className="absolute inset-0 border-2 border-amber-200/30 rounded-[100%]"
+                  />
+                </motion.div>
+              )}
             </div>
 
-            {/* Overflow puddle */}
-            {waterLevel > overflowThresholdRef.current && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.5, y: 0 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="absolute bottom-[-25px] left-1/2 -translate-x-1/2 w-64 md:w-96 h-12 md:h-16 bg-amber-500/50 blur-xl rounded-[100%] z-0 pointer-events-none" 
-              >
-                {/* Splash ripples */}
-                <motion.div 
-                  animate={{ scale: [1, 1.2], opacity: [0.6, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
-                  className="absolute inset-0 border-4 border-amber-300/40 rounded-[100%]"
-                />
-                <motion.div 
-                  animate={{ scale: [1, 1.4], opacity: [0.4, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut", delay: 0.5 }}
-                  className="absolute inset-0 border-2 border-amber-200/30 rounded-[100%]"
-                />
-              </motion.div>
-            )}
-          </div>
+            {/* Right Column */}
+            <div className="flex flex-col justify-end lg:justify-between pt-0 lg:pt-8 pb-0 lg:pb-4 lg:border-l lg:border-white/10 lg:pl-8 z-20 shrink-0 pointer-events-auto mt-auto">
+              <p className="max-w-xs text-white/80 text-lg leading-relaxed font-light hidden lg:block">
+                {lang === 'th' ? 'เลือกแก้วจากคอลเลกชันของเราและทดสอบความแม่นยำของคุณ' : 'Select from our collection of highly calibrated glasses and test your precision.'}
+              </p>
 
-          {/* Right Column */}
-          <div className="flex flex-col justify-end lg:justify-between pt-0 lg:pt-8 pb-0 lg:pb-4 lg:border-l lg:border-white/10 lg:pl-8 z-20 shrink-0 pointer-events-auto mt-auto">
-            <p className="max-w-xs text-white/80 text-lg leading-relaxed font-light hidden lg:block">
-              {lang === 'th' ? 'เลือกแก้วจากคอลเลกชันของเราและทดสอบความแม่นยำของคุณ' : 'Select from our collection of highly calibrated glasses and test your precision.'}
-            </p>
+              <div className="w-full max-w-sm my-auto mx-auto lg:mx-0">
+                <div className="text-sm text-white/60 mb-2 md:mb-4 flex items-center gap-2">
+                  {lang === 'th' ? 'เลือกแก้ว' : 'Select Glass'} <span className="text-white">&gt;</span>
+                </div>
 
-            <div className="w-full max-w-sm my-auto mx-auto lg:mx-0">
-              <div className="text-sm text-white/60 mb-2 md:mb-4 flex items-center gap-2">
-                {lang === 'th' ? 'เลือกแก้ว' : 'Select Glass'} <span className="text-white">&gt;</span>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-2 md:gap-3">
-                {GLASSES.map((g, i) => (
-                  <button 
-                    key={g.id}
-                    onClick={() => handleGlassChange(i)}
-                    disabled={gameState === 'playing'}
-                    className={`p-2 md:p-4 rounded-lg border transition-all text-left ${glassIndex === i ? 'bg-white/10 border-white/30 shadow-lg' : 'bg-black/20 border-white/5 hover:bg-white/5'} ${gameState === 'playing' && glassIndex !== i ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  >
-                    <div className="font-medium text-white text-[11px] md:text-sm">{g.name}</div>
-                    <div className="text-white/50 text-[9px] md:text-xs mt-0.5 md:mt-1">{g.capacity}x Vol</div>
-                  </button>
-                ))}
-              </div>
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                  {GLASSES.map((g, i) => (
+                    <button
+                      key={g.id}
+                      onClick={() => handleGlassChange(i)}
+                      disabled={gameState === 'playing'}
+                      className={`p-2 md:p-4 rounded-lg border transition-all text-left ${glassIndex === i ? 'bg-white/10 border-white/30 shadow-lg' : 'bg-black/20 border-white/5 hover:bg-white/5'} ${gameState === 'playing' && glassIndex !== i ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      <div className="font-medium text-white text-[11px] md:text-sm">{g.name}</div>
+                      <div className="text-white/50 text-[9px] md:text-xs mt-0.5 md:mt-1">{g.capacity}x Vol</div>
+                    </button>
+                  ))}
+                </div>
 
-              <div className="mt-4 md:mt-6 h-[50px] md:h-[60px]">
-                {gameState === 'menu' ? (
-                  <button 
-                    onClick={startGame}
-                    className="w-full h-full rounded-sm flex items-center justify-center gap-2 transition-all cursor-pointer bg-[#ffb38a] text-black hover:bg-[#ffb38a]/90 active:scale-[0.98] font-bold text-lg shadow-[0_0_20px_rgba(255,179,138,0.4)]"
-                  >
-                    {lang === 'th' ? 'เริ่มเกม' : 'Start Game'}
-                  </button>
-                ) : (
-                  <button 
-                    onMouseDown={startPouring}
-                    onMouseUp={stopPouring}
-                    onMouseLeave={stopPouring}
-                    onTouchStart={startPouring}
-                    onTouchEnd={stopPouring}
-                    className="hidden lg:flex w-full h-full rounded-sm items-center justify-center gap-2 transition-all select-none touch-none cursor-pointer bg-white text-black hover:bg-white/90 active:scale-[0.98] font-medium"
-                  >
-                    {lang === 'th' ? 'กดค้างเพื่อริน' : 'Hold to Pour'}
-                  </button>
-                )}
+                <div className="mt-4 md:mt-6 h-[50px] md:h-[60px]">
+                  {gameState === 'menu' ? (
+                    <button
+                      onClick={startGame}
+                      className="w-full h-full rounded-sm flex items-center justify-center gap-2 transition-all cursor-pointer bg-[#ffb38a] text-black hover:bg-[#ffb38a]/90 active:scale-[0.98] font-bold text-lg shadow-[0_0_20px_rgba(255,179,138,0.4)]"
+                    >
+                      {lang === 'th' ? 'เริ่มเกม' : 'Start Game'}
+                    </button>
+                  ) : (
+                    <button
+                      onMouseDown={startPouring}
+                      onMouseUp={stopPouring}
+                      onMouseLeave={stopPouring}
+                      onTouchStart={startPouring}
+                      onTouchEnd={stopPouring}
+                      className="hidden lg:flex w-full h-full rounded-sm items-center justify-center gap-2 transition-all select-none touch-none cursor-pointer bg-white text-black hover:bg-white/90 active:scale-[0.98] font-medium"
+                    >
+                      {lang === 'th' ? 'กดค้างเพื่อริน' : 'Hold to Pour'}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
 
           </main>
         ) : gameMode === 'category' ? (
@@ -742,7 +778,7 @@ export default function App() {
                 <p className="text-white/80 text-lg mb-12 max-w-md mx-auto">
                   {lang === 'th' ? 'ระบบจะสุ่มหมวดหมู่ขึ้นมา คุณมีเวลา 5 วินาทีในการพูดคำศัพท์ในหมวดหมู่นั้นแล้วกดปุ่ม' : 'A random category will appear. You have 5 seconds to name something in that category and press the button.'}
                 </p>
-                <button 
+                <button
                   onClick={startCategoryGame}
                   className="px-12 py-4 rounded-full bg-[#ffb38a] text-black hover:bg-white active:scale-[0.98] font-bold text-xl transition-all shadow-[0_0_30px_rgba(255,179,138,0.3)]"
                 >
@@ -759,17 +795,17 @@ export default function App() {
                     {currentCategory}
                   </h2>
                 </div>
-                
+
                 <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center mb-8 md:mb-16">
                   <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                    <circle 
-                      cx="50" cy="50" r="48" 
-                      fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="4" 
+                    <circle
+                      cx="50" cy="50" r="48"
+                      fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="4"
                     />
-                    <circle 
-                      cx="50" cy="50" r="48" 
-                      fill="none" stroke="#ffb38a" strokeWidth="4" 
-                      strokeDasharray="301.59" 
+                    <circle
+                      cx="50" cy="50" r="48"
+                      fill="none" stroke="#ffb38a" strokeWidth="4"
+                      strokeDasharray="301.59"
                       strokeDashoffset={`${(1 - timeLeft / 5) * 301.59}`}
                       className="transition-all duration-1000 ease-linear"
                     />
@@ -779,7 +815,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <button 
+                <button
                   onClick={handleCategoryNext}
                   className="w-full max-w-sm py-6 rounded-2xl bg-white text-black hover:bg-gray-100 active:scale-[0.98] font-bold text-2xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
                 >
@@ -799,9 +835,9 @@ export default function App() {
             {!isSyncPlaying ? (
               <div className="text-center z-10">
                 <h1 className="text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight mb-8 text-white">
-                  {lang === 'th' ? 'พูดตรง' : 'Sync or'}<br/><span className="text-[#ffb38a]">{lang === 'th' ? 'รอดกิน' : 'Drink'}</span>
+                  {lang === 'th' ? 'พูดตรง' : 'Sync or'}<br /><span className="text-[#ffb38a]">{lang === 'th' ? 'รอดกิน' : 'Drink'}</span>
                 </h1>
-                
+
                 <div className="bg-black/20 border border-white/10 rounded-2xl p-6 md:p-8 mb-12 max-w-md mx-auto text-left backdrop-blur-sm">
                   <h3 className="text-[#ffb38a] font-bold text-lg mb-4">{lang === 'th' ? 'วิธีเล่น:' : 'How to play:'}</h3>
                   <ol className="text-white/80 space-y-3 text-sm md:text-base list-decimal list-inside">
@@ -823,7 +859,7 @@ export default function App() {
                   </ol>
                 </div>
 
-                <button 
+                <button
                   onClick={startSyncGame}
                   className="px-12 py-4 rounded-full bg-[#ffb38a] text-black hover:bg-white active:scale-[0.98] font-bold text-xl transition-all shadow-[0_0_30px_rgba(255,179,138,0.3)]"
                 >
@@ -844,7 +880,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <button 
+                <button
                   onClick={handleSyncNext}
                   className="w-full max-w-sm py-6 rounded-2xl bg-white text-black hover:bg-gray-100 active:scale-[0.98] font-bold text-2xl transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
                 >
@@ -859,29 +895,29 @@ export default function App() {
       {/* Game Over Popup */}
       <AnimatePresence>
         {gameMode === 'spill' && gameState === 'gameover' && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
               className="bg-gradient-to-b from-[#8c3314] to-[#4a1705] border border-[#ffb38a]/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full text-center"
             >
               <h2 className="text-4xl font-black text-white mb-8">{lang === 'th' ? 'ล้นแล้ว!' : 'Overflow!'}</h2>
-              
+
               <div className="flex flex-col gap-3">
-                <button 
+                <button
                   onClick={startGame}
                   className="w-full py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer bg-[#ffb38a] text-black hover:bg-white active:scale-[0.98] font-bold text-lg"
                 >
                   <RotateCcw size={20} />
                   {lang === 'th' ? 'เล่นอีกครั้ง' : 'Play Again'}
                 </button>
-                <button 
+                <button
                   onClick={resetToMenu}
                   className="w-full py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer bg-black/20 text-white hover:bg-black/40 border border-white/10 active:scale-[0.98] font-medium text-lg"
                 >
@@ -896,30 +932,30 @@ export default function App() {
       {/* Category Game Over Popup */}
       <AnimatePresence>
         {gameMode === 'category' && isCategoryGameOver && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
               className="bg-gradient-to-b from-[#8c3314] to-[#4a1705] border border-[#ffb38a]/30 p-8 rounded-3xl shadow-2xl max-w-sm w-full text-center"
             >
               <h2 className="text-4xl font-black text-white mb-4">{lang === 'th' ? 'หมดเวลา!' : "Time's Up!"}</h2>
-              <p className="text-white/80 mb-8">{lang === 'th' ? 'คุณนึกคำศัพท์ไม่ทันในหมวดหมู่:' : 'You failed to name something in:'} <br/><strong className="text-white text-xl">{currentCategory}</strong></p>
-              
+              <p className="text-white/80 mb-8">{lang === 'th' ? 'คุณนึกคำศัพท์ไม่ทันในหมวดหมู่:' : 'You failed to name something in:'} <br /><strong className="text-white text-xl">{currentCategory}</strong></p>
+
               <div className="flex flex-col gap-3">
-                <button 
+                <button
                   onClick={startCategoryGame}
                   className="w-full py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer bg-[#ffb38a] text-black hover:bg-white active:scale-[0.98] font-bold text-lg"
                 >
                   <RotateCcw size={20} />
                   {lang === 'th' ? 'เล่นอีกครั้ง' : 'Play Again'}
                 </button>
-                <button 
+                <button
                   onClick={() => setIsCategoryGameOver(false)}
                   className="w-full py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer bg-black/20 text-white hover:bg-black/40 border border-white/10 active:scale-[0.98] font-medium text-lg"
                 >
